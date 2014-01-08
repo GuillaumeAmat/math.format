@@ -30,7 +30,7 @@ Method to check values and format numbers.
 
 Unit tests are made with the [QUnit testing framework](http://qunitjs.com). They are usable by browsing the `test/tests.html` page or using [Grunt](http://gruntjs.com).
 
-To use Grunt, install the dependancies via [NodeJS](http://nodejs.org) and launch it
+To use Grunt, install the dependencies via [NodeJS](http://nodejs.org) and launch it
 
 	npm install
 	grunt
