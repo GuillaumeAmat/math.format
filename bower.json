@@ -1,0 +1,26 @@
+{
+  "name": "math.format",
+  "description": "Method to check values and format numbers",
+  "version": "0.4.0",
+  "homepage": "https://github.com/GuillaumeAmat/math.format",
+  "license": "MIT",
+  "authors": [
+    "Guillaume AMAT <guillaume.amat@informatique-libre.com>"
+  ],
+  "keywords": [
+    "math",
+    "format",
+    "round",
+    "ceil",
+    "floor",
+    "min",
+    "max",
+    "ifNaN",
+    "NaN",
+    "ifEmpty",
+    "empty",
+    "undefined",
+    "decimal",
+    "float"
+  ]
+}
