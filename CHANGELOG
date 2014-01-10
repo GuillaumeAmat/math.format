@@ -1,0 +1,13 @@
+
+Changes in version 0.4.0 :
+- Adds this changelog file
+- Adds a Bower spec file in order to push the library in the Bower repository
+
+
+Changes in version 0.2.1 :
+- Ignore the node_modules directory in git
+- Fixes a typo in the readme file
+
+
+Changes in version 0.2.0 :
+- First stable release
