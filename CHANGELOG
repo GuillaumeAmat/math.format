@@ -1,5 +1,9 @@
 
 Changes in version 0.8.0:
+- The new preProcess parameter let you do some calculations before any operation
+
+
+Changes in version 0.8.0:
 - The new postProcess parameter let you do some calculations on the returned value
 
 

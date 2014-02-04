@@ -9,6 +9,7 @@
 		'max': false,
 		'ifNaN': NaN, // Value to return if the new value is not a number
 		'ifEmpty': undefined, // Value to return if the original value is empty or undefined
+		'preProcess': false,
 		'postProcess': false,
 		
 		// Output layout
@@ -56,6 +57,18 @@
 		
 		
 		var new_value = value;
+		
+		
+		// PreProcess
+		if (options.preProcess !== false) {
+			
+			new_value = eval(options.preProcess.replace(/x/g, new_value));
+			
+			if (isNaN(new_value)) {
+				
+				return options.ifNaN;
+			}
+		}
 		
 		
 		// Minimum
