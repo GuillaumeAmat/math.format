@@ -1,5 +1,5 @@
 
-Changes in version 0.4.1:
+Changes in version 0.6.0:
 - Commas in the argument are now replaced by points
 - It is possible to add prefix or suffix to layout the output
 - You can now ask to MAth.format to use toLocaleString on the output
