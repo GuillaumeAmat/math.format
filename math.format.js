@@ -12,7 +12,8 @@
 		
 		// Output layout
 		'prefix': false,
-		'suffix': false
+		'suffix': false,
+		'toLocaleString': false
 	};
 
 
@@ -126,6 +127,15 @@
 				
 				return options.ifNaN;
 			}
+		}
+		
+		
+		// Output layout
+
+		// ToLocaleString
+		if (options.toLocaleString === true) {
+			
+			new_value = new_value.toLocaleString();
 		}
 		
 		
