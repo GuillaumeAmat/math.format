@@ -12,6 +12,9 @@ module.exports = function(grunt) {
 		
 		
 		jshint: {
+			options: {
+				'-W061': true
+			},
 			files: [
 				'math.format.js'
 			]
