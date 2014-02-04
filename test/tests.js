@@ -140,3 +140,25 @@ test( "If undefined", function() {
 	equal( Math.format(undefined, { 'ifEmpty': 'test ok' }), 'test ok', 'Without options' );
 });
 
+test( "Pre-process", function() {
+	equal( Math.format(2, { 'preProcess': 'x + 2' }), 4, 'Addition' );
+	equal( Math.format(2, { 'preProcess': 'x - 2' }), 0, 'Soustraction' );
+	equal( Math.format(2, { 'preProcess': 'x * 2' }), 4, 'Multiplication' );
+	equal( Math.format(2, { 'preProcess': 'x / 2' }), 1, 'Division' );
+	equal( Math.format(2, { 'preProcess': '(x + 2) * 2' }), 8, 'Complex' );
+});
+
+test( "Post-process", function() {
+	equal( Math.format(2, { 'postProcess': 'x + 2' }), 4, 'Addition' );
+	equal( Math.format(2, { 'postProcess': 'x - 2' }), 0, 'Soustraction' );
+	equal( Math.format(2, { 'postProcess': 'x * 2' }), 4, 'Multiplication' );
+	equal( Math.format(2, { 'postProcess': 'x / 2' }), 1, 'Division' );
+	equal( Math.format(2, { 'postProcess': '(x + 2) * 2' }), 8, 'Complex' );
+});
+
+test( "Prefix and suffix", function() {
+	equal( Math.format(2, { 'prefix': 'hello ' }), 'hello 2', 'Prefix' );
+	equal( Math.format(2, { 'suffix': ' times' }), '2 times', 'Suffix' );
+	equal( Math.format(2, { 'prefix': 'hello ', 'suffix': ' times' }), 'hello 2 times', 'Prefix and suffix' );
+});
+

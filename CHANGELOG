@@ -1,6 +1,7 @@
 
-Changes in version 0.8.0:
+Changes in version 0.8.1:
 - The new preProcess parameter let you do some calculations before any operation
+- Adds some tests for the last added parameters
 
 
 Changes in version 0.8.0:
