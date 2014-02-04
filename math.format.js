@@ -9,6 +9,7 @@
 		'max': false,
 		'ifNaN': NaN, // Value to return if the new value is not a number
 		'ifEmpty': undefined, // Value to return if the original value is empty or undefined
+		'postProcess': false,
 		
 		// Output layout
 		'prefix': false,
@@ -122,6 +123,18 @@
 			
 			options.ceil = +options.ceil;
 			new_value = Math.ceil10(new_value, options.ceil);
+			
+			if (isNaN(new_value)) {
+				
+				return options.ifNaN;
+			}
+		}
+		
+		
+		// PostProcess
+		if (options.postProcess !== false) {
+			
+			new_value = eval(options.postProcess.replace(/x/g, new_value));
 			
 			if (isNaN(new_value)) {
 				

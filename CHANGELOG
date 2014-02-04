@@ -1,4 +1,8 @@
 
+Changes in version 0.8.0:
+- The new postProcess parameter let you do some calculations on the returned value
+
+
 Changes in version 0.6.0:
 - Commas in the argument are now replaced by points
 - It is possible to add prefix or suffix to layout the output
