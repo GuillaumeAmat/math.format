@@ -36,6 +36,11 @@
 			return options.ifEmpty;
 		}
 		
+		if (typeof(value) == 'string') {
+
+			value = value.replace(/,/g, '.');
+		}
+
 		value = +value;
 		
 		if (isNaN(value)) {

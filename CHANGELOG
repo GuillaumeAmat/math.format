@@ -1,13 +1,17 @@
 
-Changes in version 0.4.0 :
+Changes in version 0.4.1:
+- Commas in the argument are now replaced by points
+
+
+Changes in version 0.4.0:
 - Adds this changelog file
 - Adds a Bower spec file in order to push the library in the Bower repository
 
 
-Changes in version 0.2.1 :
+Changes in version 0.2.1:
 - Ignore the node_modules directory in git
 - Fixes a typo in the readme file
 
 
-Changes in version 0.2.0 :
+Changes in version 0.2.0:
 - First stable release
