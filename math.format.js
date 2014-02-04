@@ -8,7 +8,11 @@
 		'min': false,
 		'max': false,
 		'ifNaN': NaN, // Value to return if the new value is not a number
-		'ifEmpty': undefined // Value to return if the original value is empty or undefined
+		'ifEmpty': undefined, // Value to return if the original value is empty or undefined
+		
+		// Output layout
+		'prefix': false,
+		'suffix': false
 	};
 
 
@@ -122,6 +126,20 @@
 				
 				return options.ifNaN;
 			}
+		}
+		
+		
+		// Prefix
+		if (options.prefix !== false) {
+			
+			new_value = options.prefix + new_value.toString();
+		}
+		
+		
+		// Suffix
+		if (options.suffix !== false) {
+			
+			new_value = new_value.toString() + options.suffix;
 		}
 		
 		

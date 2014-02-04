@@ -1,6 +1,7 @@
 
 Changes in version 0.4.1:
 - Commas in the argument are now replaced by points
+- It is possible to add prefix or suffix to layout the output
 
 
 Changes in version 0.4.0:
