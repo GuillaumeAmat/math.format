@@ -12,13 +12,16 @@ module.exports = function(grunt) {
 		
 		
 		jshint: {
+			options: {
+				'-W061': true
+			},
 			files: [
 				'math.format.js'
 			]
 		},
 		
 		qunit: {
-			all: ['test/tests.html']
+			all: ['test/index.html']
 		}
 	});
 	

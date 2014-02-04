@@ -24,11 +24,20 @@ Method to check values and format numbers.
 	Math.format('a string', {'ifNaN': 'custom value'}); // Returns 'custom value'
 	Math.format('', {'ifEmpty': 'custom value'}); // Returns 'custom value'
 	Math.format(undefined, {'ifEmpty': 'custom value'}); // Returns 'custom value'
+	
+	Math.format(2, {'preProcess': '(x + 2) * 3'}); // Returns 12
+	Math.format(2, {'postProcess': '(x + 2) * 3'}); // Returns 12
+	Math.format(2, {'preProcess': '(x + 2) * 3', 'max': 10}); // Returns 10
+	Math.format(2, {'postProcess': '(x + 2) * 3', 'max': 10}); // Returns 12
+	
+	Math.format(2, {'prefix': 'hello '}); // Returns 'hello 2'
+	Math.format(2, {'suffix': ' times'}); // Returns '2 times'
+	Math.format(2, {'prefix': 'hello ', 'suffix': ' times'}); // Returns 'hello 2 times'
 
 
 # Unit tests
 
-Unit tests are made with the [QUnit testing framework](http://qunitjs.com). They are usable by browsing the `test/tests.html` page or using [Grunt](http://gruntjs.com).
+Unit tests are made with the [QUnit testing framework](http://qunitjs.com). They are usable by browsing the `test/index.html` page or using [Grunt](http://gruntjs.com).
 
 To use Grunt, install the dependencies via [NodeJS](http://nodejs.org) and launch it
 

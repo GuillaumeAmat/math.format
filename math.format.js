@@ -8,7 +8,15 @@
 		'min': false,
 		'max': false,
 		'ifNaN': NaN, // Value to return if the new value is not a number
-		'ifEmpty': undefined // Value to return if the original value is empty or undefined
+		'ifEmpty': undefined, // Value to return if the original value is empty or undefined
+		'preProcess': false, // String to be evaluated before any operation. The value has to be replaced by a "x" (eg: "x + 2")
+		'postProcess': false, // String to be evaluated after all the operations. The value has to be replaced by a "x" (eg: "x + 2")
+		
+		// Output layout
+		// This parameters make the output type become string
+		'prefix': false, // Prepends a string to the output
+		'suffix': false, // Appends a string to the output
+		'toLocaleString': false // Calls the toLocaleString Javascript function on the output
 	};
 
 
@@ -36,6 +44,11 @@
 			return options.ifEmpty;
 		}
 		
+		if (typeof(value) == 'string') {
+
+			value = value.replace(/,/g, '.');
+		}
+
 		value = +value;
 		
 		if (isNaN(value)) {
@@ -45,6 +58,18 @@
 		
 		
 		var new_value = value;
+		
+		
+		// PreProcess
+		if (options.preProcess !== false) {
+			
+			new_value = eval(options.preProcess.replace(/x/g, new_value));
+			
+			if (isNaN(new_value)) {
+				
+				return options.ifNaN;
+			}
+		}
 		
 		
 		// Minimum
@@ -117,6 +142,41 @@
 				
 				return options.ifNaN;
 			}
+		}
+		
+		
+		// PostProcess
+		if (options.postProcess !== false) {
+			
+			new_value = eval(options.postProcess.replace(/x/g, new_value));
+			
+			if (isNaN(new_value)) {
+				
+				return options.ifNaN;
+			}
+		}
+		
+		
+		// Output layout
+
+		// ToLocaleString
+		if (options.toLocaleString === true) {
+			
+			new_value = new_value.toLocaleString();
+		}
+		
+		
+		// Prefix
+		if (options.prefix !== false) {
+			
+			new_value = options.prefix + new_value.toString();
+		}
+		
+		
+		// Suffix
+		if (options.suffix !== false) {
+			
+			new_value = new_value.toString() + options.suffix;
 		}
 		
 		
