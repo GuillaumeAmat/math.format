@@ -9,13 +9,14 @@
 		'max': false,
 		'ifNaN': NaN, // Value to return if the new value is not a number
 		'ifEmpty': undefined, // Value to return if the original value is empty or undefined
-		'preProcess': false,
-		'postProcess': false,
+		'preProcess': false, // String to be evaluated before any operation. The value has to be replaced by a "x" (eg: "x + 2")
+		'postProcess': false, // String to be evaluated after all the operations. The value has to be replaced by a "x" (eg: "x + 2")
 		
 		// Output layout
-		'prefix': false,
-		'suffix': false,
-		'toLocaleString': false
+		// This parameters make the output type become string
+		'prefix': false, // Prepends a string to the output
+		'suffix': false, // Appends a string to the output
+		'toLocaleString': false // Calls the toLocaleString Javascript function on the output
 	};
 
 
