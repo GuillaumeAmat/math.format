@@ -1,6 +1,10 @@
 
+Changes in version 0.8.4:
+- Fixes typo in README and CHANGELOG files
+
+
 Changes in version 0.8.3:
-- Adds the ifInfinite parameter
+- Adds the ifInfinity parameter
 
 
 Changes in version 0.8.2:
