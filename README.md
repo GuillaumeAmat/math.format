@@ -24,6 +24,7 @@ Method to check values and format numbers.
 	Math.format('a string', {'ifNaN': 'custom value'}); // Returns 'custom value'
 	Math.format('', {'ifEmpty': 'custom value'}); // Returns 'custom value'
 	Math.format(undefined, {'ifEmpty': 'custom value'}); // Returns 'custom value'
+	Math.format(Infinity, {'ifInfinity': 'custom value'}); // Returns 'custom value'
 	
 	Math.format(2, {'preProcess': '(x + 2) * 3'}); // Returns 12
 	Math.format(2, {'postProcess': '(x + 2) * 3'}); // Returns 12
@@ -47,4 +48,5 @@ To use Grunt, install the dependencies via [NodeJS](http://nodejs.org) and launc
 
 # Source
 
-Some [very usefull functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round) come from the marvelous [Mozilla Developer Network](https://developer.mozilla.org).
+* Some [very usefull functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round) come from the marvelous [Mozilla Developer Network](https://developer.mozilla.org).
+* A [nice patch](https://github.com/TheIronDeveloper/NumberToLocaleStringPatch) from [TheIronDeveloper](https://github.com/TheIronDeveloper) to workaround the lack of support for the toLocaleString function by Safari.

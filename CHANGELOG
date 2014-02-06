@@ -1,4 +1,20 @@
 
+Changes in version 0.8.5:
+- Adds a new source in the README file
+
+
+Changes in version 0.8.4:
+- Fixes typo in README and CHANGELOG files
+
+
+Changes in version 0.8.3:
+- Adds the ifInfinity parameter
+
+
+Changes in version 0.8.2:
+- Adds a workaround to make toLocaleString works with Safari
+
+
 Changes in version 0.8.1:
 - The new preProcess parameter let you do some calculations before any operation
 - Adds some tests for the last added parameters

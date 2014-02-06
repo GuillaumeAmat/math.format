@@ -1,3 +1,85 @@
+/* Author: Tyler Stark 
+ * Name: Localized Numbers Patch
+ * Url: https://github.com/TheIronDeveloper/NumberToLocaleStringPatch
+ * Purpose: Patch Legacy Browsers Usage of toLocaleString
+ **/
+(function(){
+	var tempNumber = Math.PI*1000000;
+	//  German and French localized numbers do not equal eachother.
+	// If the following passes, it suggests that the locale parameter is being ignored.
+	if(tempNumber.toLocaleString('de') === tempNumber.toLocaleString('fr') ) {
+			// Helper Function to assist with formatting numbers
+			var formatNumber = function(number, delimiter, decimalDelimiter){
+				var numberString = number.toString(), 
+					splitNumber = numberString.split('.'),
+					splitFloats = '';
+
+				// Check if the number's precision is greater than the thousanths place.
+				// If so, build out the tail end of the formatted Number.
+				if(splitNumber[1] && splitNumber[1].length > 3) {
+					splitFloats = decimalDelimiter + number.toFixed(3).toString().split('.')[1];
+				}
+
+				return splitNumber[0].split( /(?=(?:\d{3})+$)/g ).join(delimiter) + splitFloats;
+			};
+			window.Number.prototype.toLocaleString = function(){
+				var locale,
+					navigatorLanguage,
+					numberPrecision;
+				
+
+				navigatorLanguage = (navigator && navigator.language) || 'en';
+				navigatorLanguage = navigatorLanguage.replace(/\-[A-Z]+$/g, '');
+				locale = arguments[0] || navigatorLanguage;
+				
+
+				switch(locale) {
+					case 'en':
+						return formatNumber(this, ',', '.');
+					case 'au':
+						return formatNumber(this, ',', '.');
+					case 'gb':
+						return formatNumber(this, ',', '.');
+					case 'fr':
+						return formatNumber(this, ' ', ',');
+					case 'de':
+						return formatNumber(this, '.', ',');
+					case 'at':
+						return formatNumber(this, ',', '.');
+					case 'fi':
+						return formatNumber(this, ' ', ',');
+					case 'nl':
+						return formatNumber(this, '.', ',');
+					case 'fi':
+						return formatNumber(this, ',', '.');
+					case 'es':
+						return formatNumber(this, '.', ',');
+					case 'da':
+						return formatNumber(this, '.', ',');
+					case 'el':
+						return formatNumber(this, '.', ',');
+					case 'et':
+						return formatNumber(this, ' ', ',');
+					case 'it':
+						return formatNumber(this, '.', ',');
+					case 'pl':
+						return formatNumber(this, ' ', ',');
+					case 'sv':
+						return formatNumber(this, ' ', ',');
+					case 'ru':
+						return formatNumber(this, ' ', ',');
+					case 'no':
+						return formatNumber(this, ',', '.');
+				}
+
+				// Failsafe scenerio
+				return this.valueOf();
+			};
+	}
+})(); // Imediately Invoke
+
+
+
 (function(){
 
 	var default_options = {
@@ -9,6 +91,7 @@
 		'max': false,
 		'ifNaN': NaN, // Value to return if the new value is not a number
 		'ifEmpty': undefined, // Value to return if the original value is empty or undefined
+		'ifInfinity': Infinity, // Value to return if the original value is infinite
 		'preProcess': false, // String to be evaluated before any operation. The value has to be replaced by a "x" (eg: "x + 2")
 		'postProcess': false, // String to be evaluated after all the operations. The value has to be replaced by a "x" (eg: "x + 2")
 		
@@ -42,6 +125,11 @@
 		if (typeof(value) == 'undefined' || value === '') {
 			
 			return options.ifEmpty;
+		}
+		
+		if ([Infinity, -Infinity].indexOf(value) != -1) {
+			
+			return options.ifInfinity;
 		}
 		
 		if (typeof(value) == 'string') {
@@ -157,8 +245,16 @@
 		}
 		
 		
+		// If infinite
+		if ([Infinity, -Infinity].indexOf(value) != -1) {
+			
+			return options.ifInfinity;
+		}
+		
+		
+		
 		// Output layout
-
+		
 		// ToLocaleString
 		if (options.toLocaleString === true) {
 			
