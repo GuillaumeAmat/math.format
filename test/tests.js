@@ -140,6 +140,13 @@ test( "If undefined", function() {
 	equal( Math.format(undefined, { 'ifEmpty': 'test ok' }), 'test ok', 'Without options' );
 });
 
+test( "If infinite", function() {
+	equal( Math.format(Infinity, { 'round': -2, 'ifInfinity': 'test ok' }), 'test ok', 'With round' );
+	equal( Math.format(Infinity, { 'floor': -2, 'ifInfinity': 'test ok' }), 'test ok', 'With floor' );
+	equal( Math.format(Infinity, { 'ceil': -2, 'ifInfinity': 'test ok' }), 'test ok', 'With ceil' );
+	equal( Math.format(Infinity, { 'ifInfinity': 'test ok' }), 'test ok', 'Without options' );
+});
+
 test( "Pre-process", function() {
 	equal( Math.format(2, { 'preProcess': 'x + 2' }), 4, 'Addition' );
 	equal( Math.format(2, { 'preProcess': 'x - 2' }), 0, 'Soustraction' );

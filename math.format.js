@@ -91,6 +91,7 @@
 		'max': false,
 		'ifNaN': NaN, // Value to return if the new value is not a number
 		'ifEmpty': undefined, // Value to return if the original value is empty or undefined
+		'ifInfinity': Infinity, // Value to return if the original value is infinite
 		'preProcess': false, // String to be evaluated before any operation. The value has to be replaced by a "x" (eg: "x + 2")
 		'postProcess': false, // String to be evaluated after all the operations. The value has to be replaced by a "x" (eg: "x + 2")
 		
@@ -124,6 +125,11 @@
 		if (typeof(value) == 'undefined' || value === '') {
 			
 			return options.ifEmpty;
+		}
+		
+		if ([Infinity, -Infinity].indexOf(value) != -1) {
+			
+			return options.ifInfinity;
 		}
 		
 		if (typeof(value) == 'string') {
@@ -239,8 +245,16 @@
 		}
 		
 		
+		// If infinite
+		if ([Infinity, -Infinity].indexOf(value) != -1) {
+			
+			return options.ifInfinity;
+		}
+		
+		
+		
 		// Output layout
-
+		
 		// ToLocaleString
 		if (options.toLocaleString === true) {
 			

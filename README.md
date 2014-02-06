@@ -24,6 +24,7 @@ Method to check values and format numbers.
 	Math.format('a string', {'ifNaN': 'custom value'}); // Returns 'custom value'
 	Math.format('', {'ifEmpty': 'custom value'}); // Returns 'custom value'
 	Math.format(undefined, {'ifEmpty': 'custom value'}); // Returns 'custom value'
+	Math.format(Infinite, {'ifInfinite': 'custom value'}); // Returns 'custom value'
 	
 	Math.format(2, {'preProcess': '(x + 2) * 3'}); // Returns 12
 	Math.format(2, {'postProcess': '(x + 2) * 3'}); // Returns 12
