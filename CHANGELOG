@@ -1,4 +1,8 @@
 
+Changes in version 0.8.3:
+- Adds the ifInfinite parameter
+
+
 Changes in version 0.8.2:
 - Adds a workaround to make toLocaleString works with Safari
 
