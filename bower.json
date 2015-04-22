@@ -1,11 +1,11 @@
 {
   "name": "math.format",
   "description": "Method to check values and format numbers",
-  "version": "0.8.6",
+  "version": "0.8.7",
   "homepage": "https://github.com/GuillaumeAmat/math.format",
   "license": "MIT",
   "authors": [
-    "Guillaume AMAT <guillaume.amat@informatique-libre.com>"
+    "Guillaume AMAT <guillaume@amat.io>"
   ],
   "keywords": [
     "math",

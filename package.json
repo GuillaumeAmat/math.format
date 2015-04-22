@@ -1,14 +1,11 @@
 {
   "description": "Method to check values and format numbers.",
   "homepage": "https://github.com/GuillaumeAmat/math.format",
-  "version": "0.8.6",
-  "author": "Informatique Libre <contact@informatique-libre.com>",
-  "contributors": [
-    {
-      "name": "Guillaume AMAT",
-      "email": "guillaume.amat@informatique-libre.com"
-    }
-  ],
+  "version": "0.8.7",
+  "author": {
+    "name": "Guillaume AMAT",
+    "email": "guillaume@amat.io"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.7.1",
