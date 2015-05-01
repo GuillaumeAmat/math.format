@@ -1,11 +1,24 @@
 {
   "name": "math.format",
   "description": "Method to check values and format numbers",
-  "version": "0.8.7",
+  "version": "0.8.8",
   "homepage": "https://github.com/GuillaumeAmat/math.format",
   "license": "MIT",
   "authors": [
     "Guillaume AMAT <guillaume@amat.io>"
+  ],
+  "main": [
+      "math.format.js"
+  ],
+  "ignore": [
+      ".gitignore",
+      "CHANGELOG",
+      "Gruntfile.json",
+      "LICENSE",
+      "package.json",
+      "README.md",
+      "test",
+      "VERSION"
   ],
   "keywords": [
     "math",
