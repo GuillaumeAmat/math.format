@@ -7,6 +7,19 @@
   "authors": [
     "Guillaume AMAT <guillaume@amat.io>"
   ],
+  "main": [
+      "math.format.js"
+  ],
+  "ignore": [
+      ".gitignore",
+      "CHANGELOG",
+      "Gruntfile.json",
+      "LICENSE",
+      "package.json",
+      "README.md",
+      "test",
+      "VERSION"
+  ],
   "keywords": [
     "math",
     "format",
