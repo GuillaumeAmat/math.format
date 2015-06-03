@@ -1,4 +1,8 @@
 
+Changes in version 0.8.9:
+- Delete a condition that prevent replacing toLocaleString
+
+
 Changes in version 0.8.8:
 - Add missing attributes in bower.json
 
