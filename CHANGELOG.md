@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.1
+
+* Updates the README with 1.0.0 changes.
+* Adds the `.travis.yml` file.
+* Adds the `main` script in the `package.json` file.
+
+
 ## 1.0.0
 
 * Replaces Grunt by Webpack.
