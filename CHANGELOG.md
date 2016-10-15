@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.4
+
+* Fix the tests.
+
+
 ## 1.0.3
 
 * Fix the build.
