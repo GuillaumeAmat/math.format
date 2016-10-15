@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.3
+
+* Fix the build.
+
+
 ## 1.0.2
 
 * Do a proper release...
