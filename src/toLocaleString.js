@@ -20,7 +20,7 @@ var formatNumber = function(number, delimiter, decimalDelimiter){
     return splitNumber[0].split( /(?=(?:\d{3})+$)/g ).join(delimiter) + splitFloats;
 };
 
-Number.prototype.toLocaleString = function(){
+export default function toLocaleString(){
     var locale,
         navigatorLanguage,
         numberPrecision;
