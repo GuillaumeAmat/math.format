@@ -2,7 +2,7 @@
   "name": "math.format",
   "description": "Methods to check values and format numbers.",
   "homepage": "https://github.com/GuillaumeAmat/math.format",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "author": {
     "name": "Guillaume AMAT",
