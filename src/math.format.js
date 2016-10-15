@@ -1,6 +1,8 @@
 
-import './localizedNumbers';
-import './decimalAdjust';
+import decimalAdjust from './decimalAdjust';
+import toLocaleString from './toLocaleString';
+
+Number.prototype.toLocaleString = toLocaleString;
 
 
 const default_options = {
@@ -169,8 +171,4 @@ export default function format(value, options) {
 
 
     return new_value;
-}
-
-if (!Math.format) {
-    Math.format = format;
 }
