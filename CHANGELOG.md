@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.2
+
+* Do a proper release...
+
+
 ## 1.0.1
 
 * Updates the README with 1.0.0 changes.

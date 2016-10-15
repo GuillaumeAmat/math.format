@@ -1,3 +1,5 @@
+[![Build Status](https://api.travis-ci.org/GuillaumeAmat/math.format.svg?branch=develop)](http://travis-ci.org/GuillaumeAmat/math.format)
+
 # Math.format
 
 
